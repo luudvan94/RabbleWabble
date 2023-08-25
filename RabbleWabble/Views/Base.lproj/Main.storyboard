@@ -96,11 +96,25 @@
                             <outlet property="delegate" destination="mvD-ik-kIP" id="0xD-D6-8oi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2rQ-XW-99q"/>
+                    <navigationItem key="navigationItem" id="2rQ-XW-99q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PrV-h4-3W8">
+                            <connections>
+                                <segue destination="Xtl-Gb-4IS" kind="presentation" id="zsf-Y3-uuX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OO1-aa-4bE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818" y="794"/>
+        </scene>
+        <!--NewQuestionGroup-->
+        <scene sceneID="Dcc-3j-8L6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewQuestionGroup" id="Xtl-Gb-4IS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66s-gK-GcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524" y="533"/>
         </scene>
         <!--Select Question Group-->
         <scene sceneID="kLt-3b-hhU">
