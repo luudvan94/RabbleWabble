@@ -19,8 +19,16 @@ public class SelectQuestionGroupViewController: UIViewController {
   // MARK: - Properties
 	private let appSettings = AppSettings.shared
 
-  public let questionGroups = QuestionGroup.allGroups()
-  private var selectedQuestionGroup: QuestionGroup!
+	private let questionGroupCaretaker = QuestionGroupCaretaker()
+	private var questionGroups: [QuestionGroup] {
+	  return questionGroupCaretaker.questionGroups
+	}
+
+	private var selectedQuestionGroup: QuestionGroup! {
+	  get { return questionGroupCaretaker.selectedQuestionGroup }
+	  set { questionGroupCaretaker.selectedQuestionGroup = newValue }
+	}
+
 }
 
 // MARK: - UITableViewDataSource
@@ -67,7 +75,7 @@ extension SelectQuestionGroupViewController: UITableViewDelegate {
 	guard let viewController = segue.destination
 	  as? QuestionViewController else { return }
 	  viewController.questionStrategy =
-			appSettings.questionStrategy(for: selectedQuestionGroup)
+		appSettings.questionStrategy(for: questionGroupCaretaker)
 
 	  viewController.delegate = self
   }
